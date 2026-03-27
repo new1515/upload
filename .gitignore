@@ -1,0 +1,21 @@
+# Environment files
+.env
+.env.local
+
+# Uploaded files
+assets/uploads/
+uploads/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# Composer
+/vendor/

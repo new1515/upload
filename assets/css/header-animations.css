@@ -1,0 +1,106 @@
+/* Header Animations - Shared across all dashboards */
+.school-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 25px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    color: white;
+    margin-bottom: 20px;
+}
+.school-logo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    animation: logoRotate 8s linear infinite;
+    flex-shrink: 0;
+}
+.school-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.school-logo i {
+    font-size: 40px;
+    color: #667eea;
+}
+.school-info {
+    flex: 1;
+    overflow: hidden;
+}
+.school-info h1 {
+    font-size: 28px;
+    margin: 0 0 5px 0;
+    animation: fadeInSlide 1s ease-out, marquee 8s linear infinite;
+    white-space: nowrap;
+    display: inline-block;
+}
+.school-info p {
+    font-size: 14px;
+    margin: 0;
+    opacity: 0.9;
+    animation: fadeInSlide 1s ease-out 0.2s both;
+}
+@keyframes logoRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@keyframes fadeInSlide {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Portal Header Animation (Student/Parent/Teacher) */
+.portal-header {
+    animation: headerFadeIn 0.8s ease-out;
+}
+.portal-header .school-logo {
+    animation: logoRotate 8s linear infinite;
+}
+@keyframes headerFadeIn {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Student Avatar Animation */
+.student-avatar {
+    animation: avatarBounce 2s ease-in-out infinite;
+}
+@keyframes avatarBounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Sidebar Menu Animations */
+.sidebar-menu li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+}
+.sidebar-menu li a:hover {
+    transform: translateX(5px);
+    background: rgba(255,255,255,0.1);
+}
+.sidebar-menu li a:hover i {
+    animation: tabIconRotate 1s linear infinite;
+}
+.sidebar-menu li a i {
+    transition: transform 0.3s ease;
+}
+@keyframes tabIconRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
